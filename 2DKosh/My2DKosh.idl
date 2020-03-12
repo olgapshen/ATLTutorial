@@ -44,6 +44,8 @@ library My2DKoshLib
 	{
 		properties:
 		methods:
+			[id(1), helpstring("method ClickIn")] void ClickIn([in] LONG x,[in] LONG y);
+			[id(2), helpstring("method ClickOut")] void ClickOut([in] LONG x,[in] LONG y);
 	};
 	[
 		uuid(b7dc2b63-cb73-468b-b002-2c91381a1bfc),
