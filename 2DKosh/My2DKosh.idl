@@ -19,10 +19,15 @@ interface IPolyCtl : IDispatch
 {
 	[propput, bindable, requestedit, id(DISPID_FILLCOLOR)]
 	HRESULT FillColor([in]OLE_COLOR clr);
+	
 	[propget, bindable, requestedit, id(DISPID_FILLCOLOR)]
 	HRESULT FillColor([out, retval]OLE_COLOR* pclr);
-	[propget, id(1)] HRESULT Sides([out, retval] SHORT* pVal);
-	[propput, id(1)] HRESULT Sides([in] SHORT newVal);
+	
+	[propget, id(1)] 
+	HRESULT Sides([out, retval] SHORT* pVal);
+	
+	[propput, id(1)] 
+	HRESULT Sides([in] SHORT newVal);
 };
 
 [

@@ -150,8 +150,12 @@ public:
 	void FinalRelease()
 	{
 	}
+
 	STDMETHOD(get_Sides)(SHORT* pVal);
 	STDMETHOD(put_Sides)(SHORT newVal);
+	STDMETHOD(get_FillColor)(OLE_COLOR* pVal);
+	STDMETHOD(put_FillColor)(OLE_COLOR newVal);
+	
 	void CalcPoints(const RECT& rc);
 };
 

@@ -4,9 +4,19 @@
 </HEAD>
 <BODY>
 
+    <OBJECT ID="PolyCtl" CLASSID="CLSID:b7dc2b63-cb73-468b-b002-2c91381a1bfc"></OBJECT>
 
-<OBJECT ID="PolyCtl" CLASSID="CLSID:b7dc2b63-cb73-468b-b002-2c91381a1bfc"></OBJECT>
+    <script>
+        function test()
+        {
+            document.getElementById("PolyCtl").Sides = 10;
+            document.getElementById("PolyCtl").FillColor = 800;
+        }
+    </script>
 
+    <br />
+
+    <button onclick="test()">RUN</button>
 
 </BODY>
 </HTML>

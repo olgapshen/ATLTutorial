@@ -5,7 +5,6 @@
 
 // CPolyCtl
 
-
 STDMETHODIMP CPolyCtl::get_Sides(SHORT* pVal)
 {
     *pVal = m_nSides;
@@ -24,6 +23,26 @@ STDMETHODIMP CPolyCtl::put_Sides(SHORT newVal)
     else
     {
         return Error(_T("Shape must have between 3 and 100 sides"));
+    }
+}
+
+STDMETHODIMP CPolyCtl::get_FillColor(OLE_COLOR* pVal)
+{
+    *pVal = m_clrFillColor;
+
+    return S_OK;
+}
+
+STDMETHODIMP CPolyCtl::put_FillColor(OLE_COLOR newVal)
+{
+    if ((OLE_COLOR)0 < newVal && newVal < (OLE_COLOR)0xffffff)
+    {
+        m_clrFillColor = newVal;
+        return S_OK;
+    }
+    else
+    {
+        return Error(_T("Color must be valid"));
     }
 }
 
