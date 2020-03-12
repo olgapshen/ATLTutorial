@@ -4,6 +4,7 @@
 #include <atlctl.h>
 #include "My2DKosh_i.h"
 #include "_IPolyCtlEvents_CP.h"
+#include <math.h>
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
 #error "Single-threaded COM objects are not properly supported on Windows CE platform, such as the Windows Mobile platforms that do not include full DCOM support. Define _CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA to force ATL to support creating single-thread COM object's and allow use of it's single-threaded COM object implementations. The threading model in your rgs file was set to 'Free' as that is the only threading model supported in non DCOM Windows CE platforms."
@@ -31,10 +32,14 @@ class ATL_NO_VTABLE CPolyCtl :
 {
 public:
 
+	OLE_COLOR m_clrFillColor;
+	short m_nSides;
+	POINT m_arrPoint[100];
 
 	CPolyCtl()
 	{
 		m_nSides = 3;
+		m_clrFillColor = RGB(0, 0xFF, 0);
 	}
 
 DECLARE_OLEMISC_STATUS(OLEMISC_RECOMPOSEONRESIZE |
@@ -94,52 +99,41 @@ END_MSG_MAP()
 
 // IPolyCtl
 public:
+
 	HRESULT OnDraw(ATL_DRAWINFO& di)
 	{
 		RECT& rc = *(RECT*)di.prcBounds;
-		// Set Clip region to the rectangle specified by di.prcBounds
-		HRGN hRgnOld = nullptr;
-		if (GetClipRgn(di.hdcDraw, hRgnOld) != 1)
-			hRgnOld = nullptr;
-		bool bSelectOldRgn = false;
+		HDC hdc = di.hdcDraw;
 
-		HRGN hRgnNew = CreateRectRgn(rc.left, rc.top, rc.right, rc.bottom);
+		COLORREF    colFore;
+		HBRUSH      hOldBrush, hBrush;
+		HPEN        hOldPen, hPen;
 
-		if (hRgnNew != nullptr)
-		{
-			bSelectOldRgn = (SelectClipRgn(di.hdcDraw, hRgnNew) != ERROR);
-		}
+		// Translate m_colFore into a COLORREF type
+		OleTranslateColor(m_clrFillColor, NULL, &colFore);
 
-		Rectangle(di.hdcDraw, rc.left, rc.top, rc.right, rc.bottom);
-		SetTextAlign(di.hdcDraw, TA_CENTER|TA_BASELINE);
-		LPCTSTR pszText = _T("PolyCtl");
-#ifndef _WIN32_WCE
-		TextOut(di.hdcDraw,
-			(rc.left + rc.right) / 2,
-			(rc.top + rc.bottom) / 2,
-			pszText,
-			lstrlen(pszText));
-#else
-		ExtTextOut(di.hdcDraw,
-			(rc.left + rc.right) / 2,
-			(rc.top + rc.bottom) / 2,
-			ETO_OPAQUE,
-			nullptr,
-			pszText,
-			ATL::lstrlen(pszText),
-			nullptr);
-#endif
+		// Create and select the colors to draw the circle
+		hPen = (HPEN)GetStockObject(BLACK_PEN);
+		hOldPen = (HPEN)SelectObject(hdc, hPen);
+		hBrush = (HBRUSH)GetStockObject(WHITE_BRUSH);
+		hOldBrush = (HBRUSH)SelectObject(hdc, hBrush);
 
-		if (bSelectOldRgn)
-			SelectClipRgn(di.hdcDraw, hRgnOld);
+		Ellipse(hdc, rc.left, rc.top, rc.right, rc.bottom);
 
-		DeleteObject(hRgnNew);
+		// Create and select the brush that will be used to fill the polygon
+		hBrush = CreateSolidBrush(colFore);
+		SelectObject(hdc, hBrush);
+
+		CalcPoints(rc);
+		Polygon(hdc, &m_arrPoint[0], m_nSides);
+
+		// Select back the old pen and brush and delete the brush we created
+		SelectObject(hdc, hOldPen);
+		SelectObject(hdc, hOldBrush);
+		DeleteObject(hBrush);
 
 		return S_OK;
 	}
-
-	OLE_COLOR m_clrFillColor;
-	short m_nSides;
 
 	void OnFillColorChanged()
 	{
@@ -158,6 +152,7 @@ public:
 	}
 	STDMETHOD(get_Sides)(SHORT* pVal);
 	STDMETHOD(put_Sides)(SHORT newVal);
+	void CalcPoints(const RECT& rc);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(PolyCtl), CPolyCtl)
