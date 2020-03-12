@@ -48,8 +48,8 @@
 
 #include "My2DKosh_i.h"
 
-#define TYPE_FORMAT_STRING_SIZE   7                                 
-#define PROC_FORMAT_STRING_SIZE   73                                
+#define TYPE_FORMAT_STRING_SIZE   11                                
+#define PROC_FORMAT_STRING_SIZE   145                               
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
 #define WIRE_MARSHAL_TABLE_SIZE   0            
@@ -168,6 +168,68 @@ static const My2DKosh_MIDL_PROC_FORMAT_STRING My2DKosh__MIDL_ProcFormatString =
 /* 70 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
+	/* Procedure get_Sides */
+
+/* 72 */	0x33,		/* FC_AUTO_HANDLE */
+			0x6c,		/* Old Flags:  object, Oi2 */
+/* 74 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 78 */	NdrFcShort( 0x9 ),	/* 9 */
+/* 80 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 82 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 84 */	NdrFcShort( 0x22 ),	/* 34 */
+/* 86 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+			0x2,		/* 2 */
+/* 88 */	0x8,		/* 8 */
+			0x41,		/* Ext Flags:  new corr desc, has range on conformance */
+/* 90 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 92 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 94 */	NdrFcShort( 0x0 ),	/* 0 */
+
+	/* Parameter pVal */
+
+/* 96 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
+/* 98 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 100 */	0x6,		/* FC_SHORT */
+			0x0,		/* 0 */
+
+	/* Return value */
+
+/* 102 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 104 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 106 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Procedure put_Sides */
+
+/* 108 */	0x33,		/* FC_AUTO_HANDLE */
+			0x6c,		/* Old Flags:  object, Oi2 */
+/* 110 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 114 */	NdrFcShort( 0xa ),	/* 10 */
+/* 116 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 118 */	NdrFcShort( 0x6 ),	/* 6 */
+/* 120 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 122 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+			0x2,		/* 2 */
+/* 124 */	0x8,		/* 8 */
+			0x41,		/* Ext Flags:  new corr desc, has range on conformance */
+/* 126 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 128 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 130 */	NdrFcShort( 0x0 ),	/* 0 */
+
+	/* Parameter newVal */
+
+/* 132 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 134 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 136 */	0x6,		/* FC_SHORT */
+			0x0,		/* 0 */
+
+	/* Return value */
+
+/* 138 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 140 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 142 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
 			0x0
         }
     };
@@ -180,6 +242,10 @@ static const My2DKosh_MIDL_TYPE_FORMAT_STRING My2DKosh__MIDL_TypeFormatString =
 /*  2 */	
 			0x11, 0xc,	/* FC_RP [alloced_on_stack] [simple_pointer] */
 /*  4 */	0x8,		/* FC_LONG */
+			0x5c,		/* FC_PAD */
+/*  6 */	
+			0x11, 0xc,	/* FC_RP [alloced_on_stack] [simple_pointer] */
+/*  8 */	0x6,		/* FC_SHORT */
 			0x5c,		/* FC_PAD */
 
 			0x0
@@ -206,7 +272,9 @@ static const unsigned short IPolyCtl_FormatStringOffsetTable[] =
     (unsigned short) -1,
     (unsigned short) -1,
     0,
-    36
+    36,
+    72,
+    108
     };
 
 static const MIDL_STUBLESS_PROXY_INFO IPolyCtl_ProxyInfo =
@@ -230,7 +298,7 @@ static const MIDL_SERVER_INFO IPolyCtl_ServerInfo =
     0,
     0,
     0};
-CINTERFACE_PROXY_VTABLE(9) _IPolyCtlProxyVtbl = 
+CINTERFACE_PROXY_VTABLE(11) _IPolyCtlProxyVtbl = 
 {
     &IPolyCtl_ProxyInfo,
     &IID_IPolyCtl,
@@ -242,7 +310,9 @@ CINTERFACE_PROXY_VTABLE(9) _IPolyCtlProxyVtbl =
     0 /* IDispatch::GetIDsOfNames */ ,
     0 /* IDispatch_Invoke_Proxy */ ,
     (void *) (INT_PTR) -1 /* IPolyCtl::put_FillColor */ ,
-    (void *) (INT_PTR) -1 /* IPolyCtl::get_FillColor */
+    (void *) (INT_PTR) -1 /* IPolyCtl::get_FillColor */ ,
+    (void *) (INT_PTR) -1 /* IPolyCtl::get_Sides */ ,
+    (void *) (INT_PTR) -1 /* IPolyCtl::put_Sides */
 };
 
 
@@ -253,6 +323,8 @@ static const PRPC_STUB_FUNCTION IPolyCtl_table[] =
     STUB_FORWARDING_FUNCTION,
     STUB_FORWARDING_FUNCTION,
     NdrStubCall2,
+    NdrStubCall2,
+    NdrStubCall2,
     NdrStubCall2
 };
 
@@ -260,7 +332,7 @@ CInterfaceStubVtbl _IPolyCtlStubVtbl =
 {
     &IID_IPolyCtl,
     &IPolyCtl_ServerInfo,
-    9,
+    11,
     &IPolyCtl_table[-3],
     CStdStubBuffer_DELEGATING_METHODS
 };

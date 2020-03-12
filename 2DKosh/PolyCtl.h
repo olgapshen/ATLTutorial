@@ -34,6 +34,7 @@ public:
 
 	CPolyCtl()
 	{
+		m_nSides = 3;
 	}
 
 DECLARE_OLEMISC_STATUS(OLEMISC_RECOMPOSEONRESIZE |
@@ -138,6 +139,8 @@ public:
 	}
 
 	OLE_COLOR m_clrFillColor;
+	short m_nSides;
+
 	void OnFillColorChanged()
 	{
 		ATLTRACE(_T("OnFillColorChanged\n"));
@@ -153,6 +156,8 @@ public:
 	void FinalRelease()
 	{
 	}
+	STDMETHOD(get_Sides)(SHORT* pVal);
+	STDMETHOD(put_Sides)(SHORT newVal);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(PolyCtl), CPolyCtl)
