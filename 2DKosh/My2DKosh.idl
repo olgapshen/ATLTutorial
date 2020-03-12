@@ -4,8 +4,24 @@
 // This file will be processed by the MIDL tool to
 // produce the type library (My2DKosh.tlb) and marshalling code.
 
+#include "olectl.h"
 import "oaidl.idl";
 import "ocidl.idl";
+
+[
+	object,
+	uuid(048c4db5-5411-4631-ac64-7a5b57455b07),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IPolyCtl : IDispatch
+{
+	[propput, bindable, requestedit, id(DISPID_FILLCOLOR)]
+	HRESULT FillColor([in]OLE_COLOR clr);
+	[propget, bindable, requestedit, id(DISPID_FILLCOLOR)]
+	HRESULT FillColor([out, retval]OLE_COLOR* pclr);
+};
 
 [
 	uuid(53f13ea0-5886-431e-9655-c95ae734f09f),
@@ -14,5 +30,22 @@ import "ocidl.idl";
 library My2DKoshLib
 {
 	importlib("stdole2.tlb");
+	[
+		uuid(7ed2b240-5a48-462d-94ee-776ba37342c0)
+	]
+	dispinterface _IPolyCtlEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(b7dc2b63-cb73-468b-b002-2c91381a1bfc),
+		control
+	]
+	coclass PolyCtl
+	{
+		[default] interface IPolyCtl;
+		[default, source] dispinterface _IPolyCtlEvents;
+	};
 };
 

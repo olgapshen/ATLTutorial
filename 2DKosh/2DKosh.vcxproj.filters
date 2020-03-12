@@ -37,6 +37,12 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="_IPolyCtlEvents_CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PolyCtl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2DKosh.cpp">
@@ -49,6 +55,9 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PolyCtl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -64,10 +73,19 @@
     <None Include="2DKosh.def">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="PolyCtl.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="PolyCtl.htm" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="My2DKosh.idl">
       <Filter>Source Files</Filter>
     </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="PolyCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
