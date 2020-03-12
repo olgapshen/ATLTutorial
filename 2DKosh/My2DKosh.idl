@@ -1,0 +1,18 @@
+// 2DKosh.idl : IDL source for 2DKosh
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (My2DKosh.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(53f13ea0-5886-431e-9655-c95ae734f09f),
+	version(1.0),
+]
+library My2DKoshLib
+{
+	importlib("stdole2.tlb");
+};
+
