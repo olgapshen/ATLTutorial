@@ -111,10 +111,17 @@ public:
 
 		// If the clicked point is in our polygon then fire the ClickIn
 		//  event otherwise we fire the ClickOut event
+		short temp = m_nSides;
 		if (PtInRegion(hRgn, xPos, yPos))
+		{
 			Fire_ClickIn(xPos, yPos);
+			put_Sides(++temp);
+		}
 		else
+		{
 			Fire_ClickOut(xPos, yPos);
+			put_Sides(--temp);
+		}
 
 		// Delete the region that we created
 		DeleteObject(hRgn);
