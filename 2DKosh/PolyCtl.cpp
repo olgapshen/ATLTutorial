@@ -18,6 +18,7 @@ STDMETHODIMP CPolyCtl::put_Sides(SHORT newVal)
     if (2 < newVal && newVal < 101)
     {
         m_nSides = newVal;
+
         return S_OK;
     }
     else
