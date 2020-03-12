@@ -12,8 +12,6 @@
 
 using namespace ATL;
 
-
-
 // CPolyCtl
 class ATL_NO_VTABLE CPolyCtl :
 	public CComObjectRootEx<CComSingleThreadModel>,
@@ -38,8 +36,8 @@ public:
 
 	CPolyCtl()
 	{
-		m_nSides = 3;
-		m_clrFillColor = RGB(0, 0xFF, 0);
+		m_nSides = 5;
+		m_clrFillColor = RGB(0xAA, 0xBB, 0xCC);
 	}
 
 DECLARE_OLEMISC_STATUS(OLEMISC_RECOMPOSEONRESIZE |
@@ -50,7 +48,6 @@ DECLARE_OLEMISC_STATUS(OLEMISC_RECOMPOSEONRESIZE |
 )
 
 DECLARE_REGISTRY_RESOURCEID(IDR_POLYCTL)
-
 
 BEGIN_COM_MAP(CPolyCtl)
 	COM_INTERFACE_ENTRY(IPolyCtl)
