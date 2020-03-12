@@ -113,6 +113,7 @@
       <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>.\2DKosh.def</ModuleDefinitionFile>
       <RegisterOutput>true</RegisterOutput>
+      <PerUserRedirection>true</PerUserRedirection>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
