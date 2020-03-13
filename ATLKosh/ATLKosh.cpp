@@ -1,10 +1,10 @@
-// 2DKosh.cpp : Implementation of DLL Exports.
+// ATLKosh.cpp : Implementation of DLL Exports.
 
 
 #include "pch.h"
 #include "framework.h"
 #include "resource.h"
-#include "My2DKosh_i.h"
+#include "MyATLKosh_i.h"
 #include "dllmain.h"
 
 

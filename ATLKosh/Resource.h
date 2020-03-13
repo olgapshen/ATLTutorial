@@ -1,9 +1,9 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by 2DKosh.rc
+// Used by ATLKosh.rc
 //
 #define IDS_PROJNAME                    100
-#define IDR_MY2DKOSH                    101
+#define IDR_MYATLKOSH                    101
 #define IDB_POLYCTL                     106
 #define IDR_POLYCTL                     107
 

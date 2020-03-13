@@ -2,7 +2,7 @@
 #pragma once
 #include "resource.h"       // main symbols
 #include <atlctl.h>
-#include "My2DKosh_i.h"
+#include "MyATLKosh_i.h"
 #include "_IPolyCtlEvents_CP.h"
 #include <math.h>
 
@@ -24,7 +24,7 @@ class ATL_NO_VTABLE CPolyCtl :
 	public IConnectionPointContainerImpl<CPolyCtl>,
 	public CProxy_IPolyCtlEvents<CPolyCtl>,
 	public ISpecifyPropertyPagesImpl<CPolyCtl>,
-	public IProvideClassInfo2Impl<&CLSID_PolyCtl, &__uuidof(_IPolyCtlEvents), &LIBID_My2DKoshLib>,
+	public IProvideClassInfo2Impl<&CLSID_PolyCtl, &__uuidof(_IPolyCtlEvents), &LIBID_MyATLKoshLib>,
 	public CComCoClass<CPolyCtl, &CLSID_PolyCtl>,
 	public CComControl<CPolyCtl>
 {

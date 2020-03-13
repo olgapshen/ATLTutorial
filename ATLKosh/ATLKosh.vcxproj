@@ -96,11 +96,11 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>My2DKosh_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>My2DKosh_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>My2DKosh_p.c</ProxyFileName>
+      <HeaderFileName>MyATLKosh_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>MyATLKosh_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>MyATLKosh_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)My2DKosh.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)MyATLKosh.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -111,7 +111,7 @@
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\2DKosh.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\ATLKosh.def</ModuleDefinitionFile>
       <RegisterOutput>true</RegisterOutput>
       <PerUserRedirection>true</PerUserRedirection>
     </Link>
@@ -128,11 +128,11 @@
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>My2DKosh_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>My2DKosh_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>My2DKosh_p.c</ProxyFileName>
+      <HeaderFileName>MyATLKosh_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>MyATLKosh_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>MyATLKosh_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)My2DKosh.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)MyATLKosh.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -143,7 +143,7 @@
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\2DKosh.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\ATLKosh.def</ModuleDefinitionFile>
       <RegisterOutput>true</RegisterOutput>
     </Link>
   </ItemDefinitionGroup>
@@ -160,11 +160,11 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>My2DKosh_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>My2DKosh_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>My2DKosh_p.c</ProxyFileName>
+      <HeaderFileName>MyATLKosh_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>MyATLKosh_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>MyATLKosh_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)My2DKosh.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)MyATLKosh.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -175,7 +175,7 @@
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\2DKosh.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\ATLKosh.def</ModuleDefinitionFile>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <RegisterOutput>true</RegisterOutput>
@@ -193,11 +193,11 @@
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>My2DKosh_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>My2DKosh_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>My2DKosh_p.c</ProxyFileName>
+      <HeaderFileName>MyATLKosh_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>MyATLKosh_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>MyATLKosh_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)My2DKosh.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)MyATLKosh.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -208,7 +208,7 @@
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\2DKosh.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\ATLKosh.def</ModuleDefinitionFile>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <RegisterOutput>true</RegisterOutput>
@@ -217,7 +217,7 @@
   <ItemGroup>
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="My2DKosh_i.h" />
+    <ClInclude Include="MyATLKosh_i.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PolyCtl.h" />
     <ClInclude Include="Resource.h" />
@@ -225,7 +225,7 @@
     <ClInclude Include="_IPolyCtlEvents_CP.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2DKosh.cpp" />
+    <ClCompile Include="ATLKosh.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
@@ -240,7 +240,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="My2DKosh_i.c">
+    <ClCompile Include="MyATLKosh_i.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
@@ -263,11 +263,11 @@
     <ClCompile Include="PolyCtl.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="2DKosh.rc" />
+    <ResourceCompile Include="ATLKosh.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="2DKosh.def" />
-    <None Include="2DKosh.rgs" />
+    <None Include="ATLKosh.def" />
+    <None Include="ATLKosh.rgs" />
     <None Include="PolyCtl.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
@@ -275,7 +275,7 @@
     <None Include="script.js" />
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="My2DKosh.idl" />
+    <Midl Include="MyATLKosh.idl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="PolyCtl.bmp" />

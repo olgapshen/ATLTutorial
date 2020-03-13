@@ -1,8 +1,8 @@
-// 2DKosh.idl : IDL source for 2DKosh
+// ATLKosh.idl : IDL source for ATLKosh
 //
 
 // This file will be processed by the MIDL tool to
-// produce the type library (My2DKosh.tlb) and marshalling code.
+// produce the type library (MyATLKosh.tlb) and marshalling code.
 
 #include "olectl.h"
 import "oaidl.idl";
@@ -34,7 +34,7 @@ interface IPolyCtl : IDispatch
 	uuid(53f13ea0-5886-431e-9655-c95ae734f09f),
 	version(1.0),
 ]
-library My2DKoshLib
+library MyATLKoshLib
 {
 	importlib("stdole2.tlb");
 	[

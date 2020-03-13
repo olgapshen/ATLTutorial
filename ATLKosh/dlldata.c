@@ -19,12 +19,12 @@
 extern "C"   {
 #endif
 
-EXTERN_PROXY_FILE( My2DKosh )
+EXTERN_PROXY_FILE( MyATLKosh )
 
 
 PROXYFILE_LIST_START
 /* Start of list */
-  REFERENCE_PROXY_FILE( My2DKosh ),
+  REFERENCE_PROXY_FILE( MyATLKosh ),
 /* End of list */
 PROXYFILE_LIST_END
 
