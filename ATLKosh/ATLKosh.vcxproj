@@ -145,6 +145,7 @@
       <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>.\ATLKosh.def</ModuleDefinitionFile>
       <RegisterOutput>true</RegisterOutput>
+      <PerUserRedirection>false</PerUserRedirection>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
